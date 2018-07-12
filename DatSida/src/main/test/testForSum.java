@@ -11,7 +11,8 @@ public class testForSum {
        // System.out.println( "Test for sum 3 loops   " + testForSum(new int[] {5, 1, 23, 21, 17, 2, 3, 9, 12},22));
        // System.out.println( "Test for sum 3 loops   " + removeLargerNumber(new int[] {5, 1, 23, 21, 17, 2, 3, 9, 12},22));
 //        System.out.println( "generateSubset  " + generateSubset(new int[] {5, 1, 23, 21, 17, 2, 3, 9, 12}));
-        System.out.println( "findSumInSubset  " + findSumInSubset(generateSubset(new int[] {5, 1, 23, 21, 17, 2, 3, 9, 12}), 22));
+      //  System.out.println( "findSumInSubset  " + findSumInSubset(generateSubset(new int[] {5, 1, 23, 21, 17, 2, 3, 9, 12}), 22));
+        System.out.println( "findSumInSubset  " + checkTriplet((new int[] {5, 1, 23, 21, 17, 2, 3, 9, 12}), 100));
     }
 
 
@@ -54,6 +55,8 @@ public class testForSum {
         return result;
     }
 
+
+
     public static boolean testForSum(int[] a, int n) {
 
         for (int i : a) {
@@ -85,6 +88,32 @@ public class testForSum {
         return  testForSum(b,n);
     }
 
+
+    public static boolean checkTriplet(int []a, int n){
+
+        Arrays.sort(a, 0, a.length);
+
+        int sum = 0;
+        int left = 0;
+        int right = a.length - 1;
+
+        for(int i = 0; i < a.length - 2; i++){
+            left = i + 1;
+            right = a.length - 1 - i;
+
+            while (left < right) {
+                if (n - a[i] == a[left] + a[right]) {
+                    return true;
+                } else if (n - a[i] < a[left] + a[right]) {
+                    right--;
+                } else {
+                    left++;
+                }
+            }
+        }
+
+        return false;
+    }
 
 
     }
