@@ -8,6 +8,9 @@ package main.test;
 /**
  *
  * @author Jeremy
+ *
+ *
+ * 
  */
 public class ArraySum {
 
