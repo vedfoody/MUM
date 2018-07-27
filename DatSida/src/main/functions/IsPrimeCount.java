@@ -4,6 +4,7 @@ package main.functions;
 public class IsPrimeCount {
 
     public static int primeCount(int start, int end) {
+
         start = start < 2 ? 2 : start;
 
         if (end < start) return 0;
