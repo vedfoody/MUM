@@ -31,7 +31,7 @@ public class oddCenter {
 //        System.out.println(" subChars is  " + subChars(new char[]{'a', 'b', 'c'}, 4, 2));
 //        System.out.println(" subChars is  " + subChars(new char[]{'a', 'b', 'c'}, 1, 4));
 //        System.out.println(" subChars is  " + subChars(new char[]{}, 0, 1));
-//        System.out.println(" subChars is  " + subChars(new char[]{'a', 'b', 'c'}, 1, 2));
+        System.out.println(" subChars is  " + subChars(new char[]{'a', 'b', 'c'}, 1, 2));
 //        System.out.println(" subChars is  " + reverseInteger(91234));
 //        System.out.println(" subChars is  " + reverseInteger(-1234));
 //        System.out.println(" subChars is  " + reverseInteger(0));
@@ -96,7 +96,8 @@ public class oddCenter {
 
         }
 
-        return Arrays.toString(subArray);
+        //return Arrays.toString(subArray);
+        return String.valueOf(subArray);
     }
 
     public static int reverseInteger(int n) {
