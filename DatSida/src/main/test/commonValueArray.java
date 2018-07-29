@@ -28,17 +28,17 @@ public class commonValueArray {
         second.add(2);
         second.add(1);
         second.add(12);
+        second.add(121);
         ArrayList<Integer> three = new ArrayList<>(0);
 
         long startLoop = System.currentTimeMillis();
         System.out.println("test " + addDuplicataUsingMap(first,second));
         long endLoop = System.currentTimeMillis();
+        System.out.println( "Using loop took: " + String.valueOf( endLoop - startLoop ));
 
        System.out.println("test " + addDuplicataUsingMap(null,second));
         System.out.println("test " + addDuplicataUsingMap(first,three));
     }
-
-
 
 
 
@@ -64,6 +64,8 @@ public class commonValueArray {
 
         return (ArrayList<Integer>) result;
     }
+
+
 
 
 }

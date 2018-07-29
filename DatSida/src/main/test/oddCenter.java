@@ -1,7 +1,5 @@
 package main.test;
 
-import java.util.Arrays;
-
 public class oddCenter {
 
 
@@ -31,16 +29,19 @@ public class oddCenter {
 //        System.out.println(" subChars is  " + subChars(new char[]{'a', 'b', 'c'}, 4, 2));
 //        System.out.println(" subChars is  " + subChars(new char[]{'a', 'b', 'c'}, 1, 4));
 //        System.out.println(" subChars is  " + subChars(new char[]{}, 0, 1));
-        System.out.println(" subChars is  " + subChars(new char[]{'a', 'b', 'c'}, 1, 2));
+    //    System.out.println(" subChars is  " + subChars(new char[]{'a', 'b', 'c'}, 1, 2));
 //        System.out.println(" subChars is  " + reverseInteger(91234));
 //        System.out.println(" subChars is  " + reverseInteger(-1234));
 //        System.out.println(" subChars is  " + reverseInteger(0));
 //        System.out.println(" subChars is  " + reverseInteger(86377));
 
-        int[] first = new int[]{1, 2};
-        int[] second = new int[]{};
-
-  //      System.out.println("commonValue is 1 :  " + commonValueInter(first, second));
+        int[] first = new int[]{1, 2,7,7,4,3,3,4,2,2,4};
+        int[] second = new int[]{1,2,5,6,8,9};
+        long startLoop = System.currentTimeMillis();
+        System.out.println("commonValue is 1 :  " + threeArray(first, second));
+        long endLoop = System.currentTimeMillis();
+        System.out.println( "Using loop took: " + String.valueOf( endLoop - startLoop ));
+       // System.out.println("commonValue is 1 :  " + threeArray(first, second));
     }
 
     public static int oddCenter(int[] arrays) {
@@ -85,6 +86,7 @@ public class oddCenter {
     public static String subChars(char[] arr, int start, int len) {
 
         int subLength = start + len - 1;
+
         if (start < 0 || len < 0 || subLength >= arr.length) {
             return null;
         }
@@ -121,4 +123,34 @@ public class oddCenter {
 
         return sign * reverseValue;
     }
+
+    public static int[] threeArray(int[] first, int[] second) {
+
+        if (first == null || second == null) return null;
+        if (first.length == 0 || second.length == 0) return new int[0];
+        int min =
+                (first.length < second.length) ? first.length : second.length;
+        int[] a, b;
+        if (min == first.length) {
+            a = first;
+            b = second;
+        } else {
+            a = second;
+            b = first;
+        }
+        int[] c = new int[min];
+        int k = 0;
+        for (int i = 0; i < a.length; i++)
+            for (int j = 0; j < b.length; j++)
+                if (a[i] == b[j]) {
+                    c[k] = a[i];
+                    k++;
+                }
+        int[] retArray = new int[k];
+
+        for (int t = 0; t < retArray.length; t++)
+            retArray[t] = c[t];
+        return retArray;
+    }
+
 }
