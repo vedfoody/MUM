@@ -153,4 +153,39 @@ public class oddCenter {
         return retArray;
     }
 
+    public static int POE(int[] a){
+
+        if(a.length < 3 ) return -1;
+
+        int index = 1;
+        int i = 0;
+        int j = a.length - 1;
+
+        int leftSum = a[i];
+        int rightSum = a[j];
+
+        for(int k = 1; k < a.length -1 ; k++ ) {
+            if (leftSum < rightSum) {
+                i++;
+                leftSum += a[i];
+                index = i + 1;
+            } else {
+                j--;
+                rightSum += a[j];
+                index = j - 1;
+            }
+        }
+        if(leftSum == rightSum)
+            return index;
+        else
+            return -1;
+
+
+        }
+
+
+
+
+
+
 }
