@@ -35,13 +35,16 @@ public class oddCenter {
 //        System.out.println(" subChars is  " + reverseInteger(0));
 //        System.out.println(" subChars is  " + reverseInteger(86377));
 
-        int[] first = new int[]{1, 2,7,7,4,3,3,4,2,2,4};
-        int[] second = new int[]{1,2,5,6,8,9};
-        long startLoop = System.currentTimeMillis();
-        System.out.println("commonValue is 1 :  " + threeArray(first, second));
-        long endLoop = System.currentTimeMillis();
-        System.out.println( "Using loop took: " + String.valueOf( endLoop - startLoop ));
-       // System.out.println("commonValue is 1 :  " + threeArray(first, second));
+//        int[] first = new int[]{1, 2,7,7,4,3,3,4,2,2,4};
+//        int[] second = new int[]{1,2,5,6,8,9};
+//        long startLoop = System.currentTimeMillis();
+//        System.out.println("commonValue is 1 :  " + threeArray(first, second));
+//        long endLoop = System.currentTimeMillis();
+//        System.out.println( "Using loop took: " + String.valueOf( endLoop - startLoop ));
+//       // System.out.println("commonValue is 1 :  " + threeArray(first, second));
+
+        System.out.println(" oddCenter " + POE(new int[] {1, 5, 3, 1, 1, 1, 1, 1, 1}));
+
     }
 
     public static int oddCenter(int[] arrays) {
@@ -164,7 +167,7 @@ public class oddCenter {
         int leftSum = a[i];
         int rightSum = a[j];
 
-        for(int k = 1; k < a.length -1 ; k++ ) {
+        for(int k = 1; k < a.length - 2 ; k++ ) {
             if (leftSum < rightSum) {
                 i++;
                 leftSum += a[i];

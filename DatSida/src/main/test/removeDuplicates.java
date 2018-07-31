@@ -7,7 +7,7 @@ public class removeDuplicates {
     public static void main(String[] args) {
         List<String> input2 = new ArrayList<>();
 
-        IntStream.range( 0, 100000 )
+        IntStream.range( 0, 100000 ) //100000
                 .forEach( count -> {
                     input2.add("good");
                     input2.add("better");
@@ -28,17 +28,17 @@ public class removeDuplicates {
         System.out.println( "Using loop result: " + Arrays.toString( loopResult.toArray() ));
         System.out.println( "Using loop took: " + String.valueOf( endLoop - startLoop ));
 
-        long startList = System.currentTimeMillis();
-        List<String> tempListResult = removeUsingTemporyList(Arrays.asList( input ));
-        long endList = System.currentTimeMillis();
-        System.out.println( "Using list result: " + Arrays.toString( tempListResult.toArray() ));
-        System.out.println( "Using list took: " + String.valueOf( endList - startList ));
+//        long startList = System.currentTimeMillis();
+//        List<String> tempListResult = removeUsingTemporyList(Arrays.asList( input ));
+//        long endList = System.currentTimeMillis();
+//        System.out.println( "Using list result: " + Arrays.toString( tempListResult.toArray() ));
+//        System.out.println( "Using list took: " + String.valueOf( endList - startList ));
 
-        long startMap = System.currentTimeMillis();
-        List<String> tempMapResult = removeUsingMap(Arrays.asList( input ));
-        long endMap = System.currentTimeMillis();
-        System.out.println( "Using map result: " + Arrays.toString( tempMapResult.toArray() ));
-        System.out.println( "Using map took: " + String.valueOf( endMap - startMap ));
+//        long startMap = System.currentTimeMillis();
+//        List<String> tempMapResult = removeUsingMap(Arrays.asList( input ));
+//        long endMap = System.currentTimeMillis();
+//        System.out.println( "Using map result: " + Arrays.toString( tempMapResult.toArray() ));
+//        System.out.println( "Using map took: " + String.valueOf( endMap - startMap ));
     }
 
     public static List<String> removeUsingLoops(List<String> input) {
